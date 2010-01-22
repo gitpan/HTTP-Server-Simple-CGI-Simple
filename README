@@ -1,0 +1,88 @@
+NAME
+    HTTP::Server::Simple::CGI::Simple - use CGI::Simple instead of CGI.pm
+
+VERSION
+    Version 0.01
+
+SYNOPSIS
+    HTTP::Server::Simple::CGI provides a CGI.pm object to the request
+    handler. CGI::Simple is a purely object oriented replacement for CGI.pm
+    that does away with a lot of historical baggage including HTML
+    generation methods.
+
+    Use this module to provide a CGI::Simple object to the request handler.
+
+        use HTTP::Server::Simple::CGI::Simple;
+
+        my $foo = HTTP::Server::Simple::CGI::Simple->new();
+        ...
+
+METHODS
+  accept_hook
+    Sets up the environment (copied verbatim from
+    "HTTP::Server::Simple::CGI").
+
+  handle_request
+    Subclasses must implement "handle_request". The default implementation
+    provided in this module "die"s and sends a "500 Internal Server Error"
+    status.
+
+  handler
+    Creates a new "CGI::Simple" object and invokes "handle_request" in an
+    "eval".
+
+  post_setup_hook
+    This module removes the call to "CGI::initialize_globals".
+
+  setup
+    Sets up the environment from meta data (copied verbatim from
+    "HTTP::Server::Simple::CGI").
+
+SEE ALSO
+    HTTP::Server::Simple, HTTP::Server::Simple::CGI
+
+AUTHOR
+    A. Sinan Unur, "<nanis at cpan.org>"
+
+BUGS
+    Please report any bugs or feature requests to
+    "bug-http-server-simple-cgi-simple at rt.cpan.org", or through the web
+    interface at
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=HTTP-Server-Simple-CGI-S
+    imple>. I will be notified, and then you'll automatically be notified of
+    progress on your bug as I make changes.
+
+SUPPORT
+    You can find documentation for this module with the perldoc command.
+
+        perldoc HTTP::Server::Simple::CGI::Simple
+
+    You can also look for information at:
+
+    *   RT: CPAN's request tracker
+
+        <http://rt.cpan.org/NoAuth/Bugs.html?Dist=HTTP-Server-Simple-CGI-Sim
+        ple>
+
+    *   AnnoCPAN: Annotated CPAN documentation
+
+        <http://annocpan.org/dist/HTTP-Server-Simple-CGI-Simple>
+
+    *   CPAN Ratings
+
+        <http://cpanratings.perl.org/d/HTTP-Server-Simple-CGI-Simple>
+
+    *   Search CPAN
+
+        <http://search.cpan.org/dist/HTTP-Server-Simple-CGI-Simple/>
+
+ACKNOWLEDGEMENTS
+LICENSE AND COPYRIGHT
+    Copyright 2010 A. Sinan Unur.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either: the GNU General Public License as published
+    by the Free Software Foundation; or the Artistic License.
+
+    See http://dev.perl.org/licenses/ for more information.
+

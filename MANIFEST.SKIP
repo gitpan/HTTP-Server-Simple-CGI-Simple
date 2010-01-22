@@ -1,0 +1,14 @@
+^Makefile$
+^Makefile\.old$
+^blib/
+^pm_to_blib
+^blibdirs
+^Build$
+^Build\.bat$
+^_build/
+\.tar\.gz$
+^\.lwpcookies
+^cover_db$
+^pod2htm.*\.tmp$
+^HTTP-Server-Simple-CGI-Simple-
+
